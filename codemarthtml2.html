@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <title>Pizza Sold in Pizza Corner</title>
+        <link rel="stylesheet" type="text/css" href="mystyle2.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <title>Basic Line Chart</title>
+      
+          <link href="../../assets/styles.css" rel="stylesheet" />
+      
+          <style>
+            
+              #chart {
+            max-width: 900px;
+            margin: 35px auto;
+          }
+            
+          </style>
+      
+          <script>
+            window.Promise ||
+              document.write(
+                '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+              )
+            window.Promise ||
+              document.write(
+                '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
+              )
+            window.Promise ||
+              document.write(
+                '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
+              )
+          </script>
+      
+          
+          <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+          
+      
+          <script>
+           
+            var _seed = 42
+            Math.random = function() {
+              _seed = (_seed * 16807) % 2147483647
+              return (_seed - 1) / 2147483646
+            }
+          </script>
+    </head>
+    <body>
+        
+        <div id="app1">
+            <p><center><font size="6">Pizza Sold in Pizza Corner</font></center></p>
+            <label class="margin-label">Ingredients : </label>
+            <select v-model="selected" class="pad margin-input">
+                <option v-for="option in options" v-bind:value="option.value">
+                  {{ option.text }}
+                </option>
+              </select>
+           
+            <p><label class="margin-label">Date:</label><input v-model="date" id="date1" class="pad margin-input margin-input-2"></p>
+            
+           
+        
+            <p><label class="margin-label">Sold:</label><input v-model="pizzasold" id="soldno" class="pad margin-input margin-input-2"></p>
+            <button v-on:click="solditems">Add</button>
+            <table id="firstTable" border="2">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Time</th>
+                  <th>Total Sold</th>
+               
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in todo1">
+                  <td>{{row.z}}</td>
+                  <td>{{row.x}}</td>
+                  <td>{{row.y}}</td>
+                 
+        
+                
+                </tr>
+              </tbody>
+            </table>
+            <p><label class="margin-label" >Total Sold :</label><input v-model="sold1" id="date1" class="pad margin-input margin-input-2"></p>
+
+            <script src="codemartjs2.js"></script>
+        </div>
+        <div id="chart">
+          
+          
+        </div>
+        <script>
+       
+          var options = {
+            series: [{
+              name: "Pizzasold",
+              data: [10, 41, 35, 51, 49]
+          }],
+            chart: {
+            height: 400,
+            type: 'line',
+            zoom: {
+              enabled: false
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            curve: 'straight'
+          },
+          title: {
+            text: 'Pizza Selling Details ',
+            align: 'left'
+          },
+          grid: {
+            row: {
+              colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+              opacity: 0.5
+            },
+          },
+          xaxis: {
+            categories: ['6PM', '7PM', '8PM', '9PM','10PM','8PM-10PM'],
+          }
+          };
+  
+          var chart = new ApexCharts(document.querySelector("#chart"), options);
+          chart.render();
+        
+        
+      </script>
+
+       
+        <a href="Home Page.html"><button class="margin">Go to Home page</button></a>
+        
+        
+    </body>
+</html>

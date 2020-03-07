@@ -1,0 +1,59 @@
+<html>
+    <head>
+      <title>Availability of Pizza in Pizza corner</title>
+      <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+        <div id="app">
+            <p><center><font size="6">Availability of Pizza in Pizza corner</font></center></p><br/><br/>
+            <p><label style="margin-left: 400px;" >Pizzaname :   </label><input type="text" class="pad" v-model="pizzaname"></p>
+            <p style="margin-left: 400px;">Ingredients :</p>
+            <input type="radio" id="one" value="Fresh Dough" v-model="picked" style="margin-left: 450px;">
+<label for="one">Fresh Dough</label>
+<br>
+<input type="radio" id="two" value="Cheese" v-model="picked" style="margin-left: 450px;">
+<label for="two">Cheese</label>
+<br>
+<input type="radio" id="three" value="Pizza sauce" v-model="picked" style="margin-left: 450px;">
+<label for="two">Pizza sauce</label>
+<br>
+<input type="radio" id="four" value="Thin crust" v-model="picked" style="margin-left: 450px;">
+<label for="two">Thin crust</label>
+<br>
+<input type="radio" id="five" value="Gluten-Free Dough" v-model="picked" style="margin-left: 450px;">
+<label for="two">Gluten-Free Dough</label>
+<br>
+
+
+<br>
+<p><label style="margin-left: 400px;">Pizza Prize :   </label><input v-model="pizzaprize" class="pad" placeholder="edit me" id="pizzaprize"></p>
+
+<button v-on:click="additemstothelist" id="add">Add</button>
+
+<table id="firsttable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ingredients</th>
+        <th>Prize</th>
+        <th>Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="row in todos">
+        <td align="center">{{row.pizza}}</td>
+        <td align="center">{{row.ingredients}}</td>
+        <td align="center">{{row.prise}}</td>
+        <td align="center"><button v-on:click="edititem(row.id,row.pizza,row.prise,row.ingredients)" >Edit</button></td>
+      
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+         <a href="Home Page.html" id="home" ><button >Go to Home page</button></a>
+        <script src="codemartjs1.js"></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+.margin{
+	margin-left:430px;
+}
+button{
+  padding: 15px;
+  border-radius: 5px;
+  width: 150px;
+  font-family: sans-serif;
+  border: none;
+  background-color: #0f4c75;
+  color : white;
+}
+button:hover{
+  padding: 15px;
+  border-radius: 5px;
+  width: 150px;
+  font-family: sans-serif;
+  border: none;
+  background-color: #0f4ccc;
+  color : white;
+}
+body{
+	font-family: sans-serif;
+}
